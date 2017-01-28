@@ -1,0 +1,57 @@
+[{
+        "status": "success",
+        "data": [
+            {
+                "currency": "USD",
+                "td_buy": "up",
+                "buy": 1127.3,
+                "buy_tender": "+0.01",
+                "td_sell": "down",
+                "sell": 228.3,
+                "sell_tender": "-0.3",
+                "day_time": "2017-01-15 16:20:14"
+        },
+            {
+                "currency": "EUR",
+                "td_buy": "up",
+                "buy": 4336.3,
+                "buy_tender": "+0.01",
+                "td_sell": "down",
+                "sell": 1228.3,
+                "sell_tender": "-0.4",
+                "day_time": "2017-01-15 16:20:14"
+        },
+            {
+                "currency": "RUB",
+                "td_buy": "up",
+                "buy": 248.1,
+                "buy_tender": "+0.01",
+                "td_sell": "down",
+                "sell": 428.3,
+                "sell_tender": "-0.02",
+                "day_time": "2017-01-15 16:20:14"
+        },
+            {
+                "currency": "EUR/USD",
+                "td_buy": "up",
+                "buy": 154.8,
+                "buy_tender": "+0.01",
+                "td_sell": "down",
+                "sell": 228.3,
+                "sell_tender": "-0.02",
+                "day_time": "2017-01-15 16:20:14"
+        },
+            {
+                "currency": "USD/RUB",
+                "td_buy": "up",
+                "buy": 918.2,
+                "buy_tender": "+0.01",
+                "td_sell": "down",
+                "sell": 218.3,
+                "sell_tender": "-0.02",
+                "day_time": "2017-01-15 16:20:14"
+        }
+    ]
+
+}
+]
