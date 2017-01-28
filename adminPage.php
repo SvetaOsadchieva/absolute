@@ -134,7 +134,8 @@ include("headerAdmin.php");
                                 <div class='col-lg-4'>
                                     <input class='form-control' type='text' value=".$q['sell_tender']." name='sell_tender'> 
                                 </div>
-                            </td>";
+                            </td>
+                             <input type='hidden' name='day_time' value=".$q['day_time'].">";
                         echo"</tr>";
                     };
          
@@ -165,6 +166,10 @@ include("headerAdmin.php");
 <script>
     $(document).ready(function () {
         $("#confirmBtn").click(function () {
+           
+            
+            
+            
             var formData = $("form").serializeArray();
             var tableData = "";
             $("#results").append(tableData);
@@ -201,13 +206,29 @@ include("headerAdmin.php");
             $('#results').html('');
         });
         $('#submitBtn').click(function () {
+             var data = []
+                , rowChildren;
+            for (var i = 0; i < $('tr').length; i++) {
+                var rowObj = {};
+                rowChildren = $('tr').eq(i).find('input, select');
+                if (rowChildren.length < 6) continue;
+                for (var j = 0; j < rowChildren.length; j++) {
+                    rowObj[$(rowChildren[j]).attr('name')] = $(rowChildren[j]).val();
+                }
+                data.push(rowObj);
+            }
+            
+            console.log(data);
+            data = JSON.stringify(data);
+            console.log(data);
             $.ajax({
                 url: "insertData.php"
                 , type: "POST"
-                , data: $("form").serializeArray()
+                , data: data
             , }).done(function (response) {
                 alert("Success");
             });
+//            console.log($("form").serializeArray());
         });
     });
 </script>

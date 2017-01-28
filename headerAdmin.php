@@ -28,11 +28,10 @@
 
 <body id='page-top' data-spy='scroll' data-target='.navbar-fixed-top'>
     <!-- Navigation -->
-    <nav class='navbar navbar-custom navbar-fixed-top' role='navigation' style='background-color:black'>
+    <nav class='navbar navbar-custom ' role='navigation' style='background-color:black'>
         <div class='container'>
             <div class='navbar-header'>
-                <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-main-collapse'><i class='fa fa-bars'></i> </button>
-                <a class='navbar-brand page-scroll' href='#page-top'> <span class='light'>Аб<i class='fa fa-usd' style='color:#009EE3'></i>олют</span> тут </a>
+                                <a class='navbar-brand' href='#page-top'> <span class='light'>Аб<i class='fa fa-usd' style='color:#009EE3'></i>олют</span> тут </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class='collapse navbar-collapse navbar-right navbar-main-collapse'>
@@ -41,9 +40,6 @@
                     <li class='hidden'>
                         <a href='#page-top'></a>
                     </li>
-
-                     <li> <a class='page-scroll' href='#currency'>Курс сейчас</a> </li>
-                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
