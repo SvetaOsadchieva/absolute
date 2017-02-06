@@ -197,7 +197,7 @@ include("headerAdmin.php");
             });
             tableData += "</tbody></table><br>";
             $("#results").append(tableData);
-        });;
+        });
         $(".cancel").click(function () {
             $('#results').html('');
         });$("#closeModal").click(function () {
