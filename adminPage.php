@@ -158,7 +158,7 @@ include("headerAdmin.php");
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title" id="exampleModalLongTitle">Обновить курс</h2>
-                    <button type="button" class="close cancel" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    <button type="button" id="closeModal" class="close cancel" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                 </div>
                 <div class='modal-body'>
                 <div id="results"></div>
@@ -200,6 +200,8 @@ include("headerAdmin.php");
         });;
         $(".cancel").click(function () {
             $('#results').html('');
+        });$("#closeModal").click(function () {
+                location.reload();
         });
         $('#submitBtn').click(function () {
             var data = []
@@ -220,12 +222,15 @@ include("headerAdmin.php");
             $.ajax({
                 url: "insertData.php"
                 , type: "POST"
-                , data: {'data': data},
-                dataType: "json",
-                cache: false
-            , }).done(function (response) {
+                , data: {'data': data}
+                , dataType: "json"
+                , cache: false
+                , success: alert("Данные обновлены")
+                ,
+            }).done(function (response) {
 //                $("#form").table("refresh");
-                alert("Данные обновлены");
+//                alert("Данные обновлены");
+//                location.reload();
             });
         });
     });
