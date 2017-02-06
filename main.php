@@ -21,7 +21,7 @@ include("connect.inc.php");
                     echo"<span>".$q['day_time']."</span></h2>";
                     }
                 
-                    $getFirstTable = $conn->prepare("SELECT * from main where currency='USD' or currency='EUR' or currency='RUB' order by day_time LIMIT 3");
+                    $getFirstTable = $conn->prepare("SELECT * from main where currency='USD' or currency='EUR' or currency='RUB' order by day_time DESC LIMIT 3");
                     
                      echo"<div style='overflow-x:auto;'>
                         <table class='table table-hover'>
@@ -49,7 +49,7 @@ include("connect.inc.php");
                     </div>";
                 
                 
-                     $getSecondTable = $conn->prepare("SELECT * from main where currency='USD/RUB' or currency='EUR/USD' order by day_time LIMIT 2");
+                     $getSecondTable = $conn->prepare("SELECT * from main where currency='USD/RUB' or currency='EUR/USD' order by day_time DESC LIMIT 2");
                     
                      echo"<div style='overflow-x:auto;'>
                         <table class='table table-hover'>

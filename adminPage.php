@@ -30,7 +30,7 @@ include("headerAdmin.php");
                     echo"<span>".$q['day_time']."</span></h2>";
                     }
                 
-                    $getFirstTable = $conn->prepare("SELECT * from main where currency='USD' or currency='EUR' or currency='RUB' order by day_time LIMIT 3");
+                    $getFirstTable = $conn->prepare("SELECT * from main where currency='USD' or currency='EUR' or currency='RUB' order by day_time DESC LIMIT 3");
                     
                 
             
@@ -101,7 +101,7 @@ include("headerAdmin.php");
                         
                         
                         
-                     $getSecondTable = $conn->prepare("SELECT * from main where currency='USD/RUB' or currency='EUR/USD' order by day_time LIMIT 2");
+                     $getSecondTable = $conn->prepare("SELECT * from main where currency='USD/RUB' or currency='EUR/USD' order by day_time DESC LIMIT 2");
                         
                         echo"<div style='overflow-x:auto;'>
                         <table class='table table-hover' id='table2'>
@@ -135,7 +135,7 @@ include("headerAdmin.php");
                                     <input class='form-control' type='text' value=".$q['sell_tender']." name='sell_tender'> 
                                 </div>
                             </td>
-                             <input type='hidden' name='day_time' value=".$q['day_time'].">";
+                                    <input type='hidden' name='day_time' value=".$q['day_time'].">";
                         echo"</tr>";
                     };
          
@@ -166,10 +166,6 @@ include("headerAdmin.php");
 <script>
     $(document).ready(function () {
         $("#confirmBtn").click(function () {
-           
-            
-            
-            
             var formData = $("form").serializeArray();
             var tableData = "";
             $("#results").append(tableData);
@@ -206,7 +202,7 @@ include("headerAdmin.php");
             $('#results').html('');
         });
         $('#submitBtn').click(function () {
-             var data = []
+            var data = []
                 , rowChildren;
             for (var i = 0; i < $('tr').length; i++) {
                 var rowObj = {};
@@ -224,11 +220,13 @@ include("headerAdmin.php");
             $.ajax({
                 url: "insertData.php"
                 , type: "POST"
-                , data: data
+                , data: {'data': data},
+                dataType: "json",
+                cache: false
             , }).done(function (response) {
-                alert("Success");
+//                $("#form").table("refresh");
+                alert("Данные обновлены");
             });
-//            console.log($("form").serializeArray());
         });
     });
 </script>
